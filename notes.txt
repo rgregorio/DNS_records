@@ -1,0 +1,14 @@
+Rails 6.1.3 had a problem with mimemagic, I was forced to change Gemfile and Gemfile.lock to use Rails 6.1.3.1
+
+"index with the required page param with the included optional param returns only the included dns records without a related hostname"
+
+This test was wrong, in the expected result, it was missing the related hostname included. I added and it passed
+
+"index with the required page param with both included and excluded optional params returns only the non-excluded dns records with a related hostname"
+
+This test was wrong, in the expected result, it was missing the related hostname non-excluded. I added and it passed
+
+I add the gems:
+	ipaddress (to validate the ip address is with the right format)
+	will_paginate (to make the pagination)
+	pry (I like this gem to debug)
